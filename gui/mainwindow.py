@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+Created on Thu Jun 20 19:34:57 2019
 
 This program creates the main window GUI for a statistics application.
 
-Author: Filippos Kozanitis
-Last edited: June 2019
-
+@author: Filipposk9
 """
 
 from PyQt5.QtWidgets import QMainWindow

@@ -2,7 +2,9 @@
 """
 Created on Fri Jun 21 16:25:21 2019
 
-@author: Filippos
+This program creates the menus used in the application's main window.
+
+@author: Filipposk9
 """
 
 from PyQt5.QtWidgets import QMainWindow, QAction
