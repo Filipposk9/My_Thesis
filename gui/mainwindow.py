@@ -8,8 +8,9 @@ Last edited: June 2019
 
 """
 
-from PyQt5.QtWidgets import QMainWindow, QTableWidget
+from PyQt5.QtWidgets import QMainWindow
 from gui.menus import Menus
+from gui.table import Table
 
 class MainWindow(QMainWindow) :
     
@@ -26,13 +27,4 @@ class MainWindow(QMainWindow) :
         self.setWindowTitle("DeStat")
         self.showMaximized()
         Menus.initMenus(self)
-        self.createTable()
-        
-    def createTable(self) : 
-        
-        #initializes table and its cells and sets it as the central widget of the app
-        
-        mainTable = QTableWidget(self)
-        mainTable.setColumnCount(24)
-        mainTable.setRowCount(24)
-        self.setCentralWidget(mainTable)
+        Table.createTable(self)
