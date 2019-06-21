@@ -2,8 +2,12 @@
 """
 Created on Thu Jun 20 19:44:57 2019
 
-@author: Filippos
+One program to rule them all, 
+One program to find them;
+One program to bring them all, 
+and in python bind them.
 
+@author: Filipposk9
 """
 
 import sys
