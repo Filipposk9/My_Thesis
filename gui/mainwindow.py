@@ -26,4 +26,4 @@ class MainWindow(QMainWindow) :
         self.setWindowTitle("DeStat")
         self.showMaximized()
         Menus.initMenus(self)
-        Table.createTable(self)
+        Table.initTable(self)

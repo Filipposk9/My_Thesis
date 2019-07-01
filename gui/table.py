@@ -9,15 +9,25 @@ statistical data.
 @author: Filipposk9
 """
 
-from PyQt5.QtWidgets import QMainWindow, QTableWidget
+from PyQt5.QtWidgets import QMainWindow, QTableView
+#from PyQt5 import QtWidgets
+from model.pandasmodel import PandasModel
+import pandas as pd
 
 class Table(QMainWindow) :
      
-    def createTable(mainWindow) : 
+    def initTable(mainWindow) : 
         
         #initializes table and its cells and sets it as the central widget of the app
         
-        mainTable = QTableWidget(mainWindow)
-        mainTable.setColumnCount(24)
-        mainTable.setRowCount(24)
-        mainWindow.setCentralWidget(mainTable)
+        mainTable = QTableView(mainWindow)
+        mainWindow.setCentralWidget(mainTable)        
+
+        #fileName = 'C:/Users/Filippos/Downloads/FL_insurance_sample.csv'
+        #mainTable.pathLE = QtWidgets.QLineEdit(mainTable)
+        #mainTable.pathLE.setText(fileName)
+        #df = pd.read_csv(fileName)
+        d = {'1': list(range(1, 24)), '2': list(range(1, 24))}
+        df = pd.DataFrame(data = d)
+        model = PandasModel(df)
+        mainTable.setModel(model)
