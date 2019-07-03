@@ -11,7 +11,7 @@ and in python bind them.
 """
 
 import sys
-from gui.mainwindow import MainWindow
+from view.mainwindow import MainWindow
 from PyQt5.QtWidgets import QApplication
 
 if __name__ == '__main__' : 
