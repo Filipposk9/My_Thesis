@@ -11,12 +11,12 @@ import pandas as pd
 
 class PandasModel(QtCore.QAbstractTableModel): 
     
-    def __init__(self, df = pd.DataFrame(), parent=None): 
+    def __init__(self, df = pd.DataFrame(), parent = None): 
         
-        QtCore.QAbstractTableModel.__init__(self, parent=parent)
+        QtCore.QAbstractTableModel.__init__(self, parent = parent)
         self._df = df
 
-    def headerData(self, section, orientation, role=QtCore.Qt.DisplayRole):
+    def headerData(self, section, orientation, role = QtCore.Qt.DisplayRole):
         
         if role != QtCore.Qt.DisplayRole:
             return QtCore.QVariant()
@@ -32,17 +32,17 @@ class PandasModel(QtCore.QAbstractTableModel):
             except (IndexError, ):
                 return QtCore.QVariant()
 
-    def data(self, index, role=QtCore.Qt.DisplayRole):
+    def data(self, index, role = QtCore.Qt.DisplayRole): 
         
-        if role != QtCore.Qt.DisplayRole:
+        if role != QtCore.Qt.DisplayRole: 
             return QtCore.QVariant()
 
         if not index.isValid():
             return QtCore.QVariant()
-
+        
         return QtCore.QVariant(str(self._df.ix[index.row(), index.column()]))
 
-    def setData(self, index, value, role):
+    def setData(self, index, value, role = QtCore.Qt.EditRole):
         
         row = self._df.index[index.row()]
         col = self._df.columns[index.column()]
@@ -65,6 +65,9 @@ class PandasModel(QtCore.QAbstractTableModel):
     def columnCount(self, parent=QtCore.QModelIndex()): 
         
         return len(self._df.columns)
+    
+    def flags(self, index):
+        return QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEditable
 
     def sort(self, column, order):
         

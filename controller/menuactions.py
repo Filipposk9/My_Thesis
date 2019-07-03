@@ -8,7 +8,7 @@ Created on Wed Jul  3 15:29:02 2019
 from PyQt5.QtWidgets import QFileDialog
 from view.table import Table
 
-class MenuActions : 
+class MenuActions: 
     
     def showNewFileDialog():
         #

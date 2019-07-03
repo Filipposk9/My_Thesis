@@ -24,7 +24,7 @@ class Table(QMainWindow):
         mainTable = QTableView(mainWindow)
         mainWindow.setCentralWidget(mainTable)        
         
-        df = pd.DataFrame(data = [[0] * 24] * 24)
+        df = pd.DataFrame(data = [[''] * 24] * 24)
         model = PandasModel(df)
         mainTable.setModel(model)
         
