@@ -10,9 +10,9 @@ This program creates the menus used in the application's main window.
 from PyQt5.QtWidgets import QMainWindow, QAction
 from controller.menuactions import MenuActions
 
-class Menus (QMainWindow) :
+class Menus (QMainWindow):
      
-    def initMenus(mainWindow) :
+    def initMenus(mainWindow):
         
         #initialize menus, submenus and actions
         

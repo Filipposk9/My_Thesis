@@ -14,7 +14,7 @@ import sys
 from view.mainwindow import MainWindow
 from PyQt5.QtWidgets import QApplication
 
-if __name__ == '__main__' : 
+if __name__ == '__main__': 
         
     app = QApplication(sys.argv)
     mainWindow = MainWindow()

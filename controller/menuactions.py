@@ -10,9 +10,12 @@ from view.table import Table
 
 class MenuActions : 
     
-    def showOpenFileDialog(self) :
+    def showNewFileDialog():
+        #
+        return None
+    
+    def showOpenFileDialog():
         
         filter = "csv(*.csv);;excel(*.xls)"
         fileName = QFileDialog.getOpenFileName(None, "Open File", None, filter)
-        #fileName[0] = path, fileName[1] = fileType
-        Table.changeTableContents(fileName[0])
+        Table.changeTableContents(fileName)

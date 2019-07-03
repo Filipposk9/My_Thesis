@@ -13,12 +13,14 @@ from PyQt5.QtWidgets import QMainWindow, QTableView
 from model.pandasmodel import PandasModel
 import pandas as pd
 
-class Table(QMainWindow) :
+class Table(QMainWindow):
     
-    def initTable(mainWindow) : 
+    def initTable(mainWindow): 
         
         #initializes table and its cells and sets it as the central widget of the app
+        
         global mainTable
+        
         mainTable = QTableView(mainWindow)
         mainWindow.setCentralWidget(mainTable)        
         
@@ -26,10 +28,9 @@ class Table(QMainWindow) :
         model = PandasModel(df)
         mainTable.setModel(model)
         
-    def changeTableContents(fileName) : 
+    def changeTableContents(fileName): 
         
-        #check for file type
-        
-        df = pd.read_excel(fileName)
-        model = PandasModel(df)
-        mainTable.setModel(model)   
+        if fileName[1] == 'csv(*.csv)':
+            mainTable.setModel(PandasModel(pd.read_csv(fileName[0])))
+        elif fileName[1] == 'excel(*.xls)':
+            mainTable.setModel(PandasModel(pd.read_excel(fileName[0])))
