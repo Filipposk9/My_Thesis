@@ -18,6 +18,8 @@ class Menus (QMainWindow):
         
         menubar = mainWindow.menuBar()
         
+        #menubar items
+        
         fileMenu = menubar.addMenu('&File')
         editMenu = menubar.addMenu('&Edit')
         viewMenu = menubar.addMenu('&View')
@@ -28,6 +30,8 @@ class Menus (QMainWindow):
         utilitiesMenu = menubar.addMenu('&Utilities')
         windowsMenu = menubar.addMenu('&Windows')
         helpMenu = menubar.addMenu('&Help')
+        
+        #fileMenu Actions
         
         newAct = QAction('New', mainWindow)
         newAct.setShortcut('Ctrl+N')
@@ -41,8 +45,17 @@ class Menus (QMainWindow):
         exitAct = QAction('Exit', mainWindow)
         exitAct.setShortcut('Ctrl+W')
         
+        #graphsMenu Actions
+        
+        barChartAct = QAction('Bar Chart', mainWindow)
+        barChartAct.triggered.connect(MenuActions.createBarDiagram)
+        
+        #add actions to menus
+        
         fileMenu.addAction(newAct)
         fileMenu.addAction(openAct)
         fileMenu.addAction(saveAct)
         fileMenu.addAction(saveAsAct)
         fileMenu.addAction(exitAct)
+        
+        graphsMenu.addAction(barChartAct)
